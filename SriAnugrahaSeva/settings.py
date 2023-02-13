@@ -11,7 +11,10 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+from dotenv import load_dotenv
 import os
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -80,7 +83,7 @@ DATABASES = {
         'NAME': 'srianugrahasevadb',
         'USER': 'sasadmin',
         'PASSWORD': 'SasAdmin9540$#',
-        'HOST': '127.0.0.1',
+        'HOST': 'srianugrahaseva.cizpayaca8mo.ap-south-1.rds.amazonaws.com',
         'PORT': '5432',
     }
 }
