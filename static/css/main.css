@@ -1,0 +1,128 @@
+.bordered {
+    border-style: solid;
+    border-width: 1px 0px 1px 0px;
+    border-color: #E4E4E4;
+}
+
+.top-navbar {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.float-right {
+    float: right !important;
+}
+
+.mr-3 {
+    margin-right: 30px;
+}
+
+.mr-5 {
+    margin-right: 50px;
+}
+
+.ml-3 {
+    margin-left: 30px;
+}
+
+.mu-3 {
+    margin-top: 20px;
+}
+
+.mt_5{
+    margin-top: 5px;
+}
+
+.mb-3 {
+    margin-bottom: 30px;
+}
+
+.cl-black {
+    color:#000000;
+}
+
+.cl-orange {
+    color: #f7b135;
+}
+
+.box-title {
+    color: #000000;
+    font-family: "Source Sans Pro", Sans-Serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+}
+
+.ml-5 {
+    margin-left: 8px;
+}
+
+.ml-80 {
+    margin-left: 110px;
+}
+
+.mt_16{
+    margin-top: 16px;
+}
+
+.mt_20{
+    margin-top: 20PX;
+}
+
+.ml-450 {
+    margin-left: 210px;
+}
+
+.navbar-logo {
+    float: left !important;
+}
+
+.ml-mr{
+    margin: 0px 40px 0px 40px;
+}
+
+.container-custom {
+    flex-wrap: inherit;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar>.container, .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl {
+    display: inline-block;
+}
+
+.nav-link:hover{
+    color: #f7b135;
+}
+
+.nav-link {
+    color: #000;
+}
+
+.navbar-nav .nav-link.active {
+    color: #f7b135;
+}
+.navbar {
+    --mdb-navbar-box-shadow: none;
+}
+
+.social:hover{
+    color: #f7b135;
+}
+
+h1{
+    font-family: 'Bahnschrift';
+    font-size: 45px;
+}
+
+.btn-book{  
+    width: 188px;
+    height: 48px;
+    background-color: #f19d0b;
+    color: #fff;
+}
+
+.btn-book:hover{  
+    background-color:#f7b135 ;
+}
+

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %} Sri Anugraha Seva {% endblock %}
+{% block content %}
+  {% include 'includes/header.html' %}
+  
+  <div id="mainSlider" class="carousel slide" data-mdb-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="card bg-dark text-white">
+          <img src="../../static/img/background.png" height="650" class="d-block w-100" alt="mainSlider" />
+          <div class="card-img-overlay" >
+            <div class="row">
+              <div class="col-md-4" style="margin-top: 120px;margin-left: 120px;">
+                <h1 class="card-text">
+                  Book for Vaideega
+                  Karyas (Vedic Rituals) starting from Jatha Karma to 
+                  Anthima Kriya
+                </h1>
+                <a href="#" class="btn btn-book" ><h6  style="margin-top: 4px;">Book Now</h6></a>
+              </div>
+            
+            </div>
+           
+          </div>
+        </div>
+       
+      </div>
+    </div>
+   
+  </div>
+  {% include 'includes/footer.html' %}
+{% endblock %}
