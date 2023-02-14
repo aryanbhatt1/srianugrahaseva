@@ -1,0 +1,164 @@
+{% extends 'base.html' %}
+{% block title %} Register | Sri Anugraha Seva {% endblock %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block extrastyle %}
+    <link rel="stylesheet" href="{% static 'css/register.css' %}" />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" ></script>
+{% endblock %}
+{% block content %}
+    {% include 'includes/header.html' %}
+    <div class="register_body container">
+        <h4>Register</h4>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-6">
+                    {{ form.first_name|as_crispy_field }}
+                </div>
+                <div class="col-md-6">
+                    {{ form.last_name|as_crispy_field }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    {{ form.email|as_crispy_field }}
+                </div>
+                <div class="col-md-6">
+                    {{ form.phonenumber|as_crispy_field }}
+                </div>
+            </div>
+            {{form.address|as_crispy_field}}
+            <div class="row">
+                <div class="col-md-6">
+                    {{ form.postalCode|as_crispy_field }}
+                </div>
+                
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    {{ form.requirement|as_crispy_field }}
+                </div>
+                <div class="col-md-4">
+                    {{ form.services|as_crispy_field }}
+                </div>
+                <div class="col-md-4">
+                    {{ form.mode|as_crispy_field  }}
+                </div>
+            </div>
+            {{ form.date|as_crispy_field }}
+            {{ form.others|as_crispy_field }}
+            <button type="submit" class="btn btn-warning">Submit</button>
+        </form>
+        {% if messages %}
+        <ul class="messages alert-success">
+            {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+{% endif %}
+    </div>
+    {% include 'includes/footer.html' %}
+    {% block js %}
+    <script language="javascript" type="text/javascript">  
+        $(document).ready(function() {
+            //create arrays to store option and values
+            var type1 = [
+                {display: "Vastu Puja", value: "Vastu Puja" },    
+                {display: "Milk fever", value: "Milk fever" },
+                {display: "Ganapati Puja", value: "Ganapati Puja" },
+                {display: "Punyahavasanam", value: "Punyahavasanam" },
+                {display: "Ganapati Homam", value: "Ganapati Homam" },
+                {display: "Navagraha homam", value: "Navagraha homam" },
+                {display: "Lakshmi Homam", value: "Lakshmi Homam" }
+            ];
+               
+            var type2 = [
+                {display: "Vastu Puja", value: "Vastu Puja" },
+                {display: "All Dwara Pooja", value: "All Dwara Pooja" },
+                {display: "Agni Puja", value: "Agni Puja" },
+                {display: "Milk fever", value: "Milk fever" },
+                {display: "Lakshmi Ganapati Homam", value: "Lakshmi Ganapati Homam" },
+                {display: "Satyanarayana Puja Lakshmi", value: "Satyanarayana Puja Lakshmi" },
+                {display: "Saffron consecration", value: "Saffron consecration" }
+            ];
+            
+            var type3 = [
+                {display: "Satyanarayana Puja", value: "Satyanarayana Puja" },
+                {display: "Navagraha Puja", value: "Navagraha Puja" },
+                {display: "Loka Balakar Puja", value: "Loka Balakar Puja" },
+                {display: "Hall worship", value: "Hall worship" },
+                {display: "Lakshmi Kunguma Archana", value: "Lakshmi Kunguma Archana" },
+            ];
+
+            var type4 = [
+                {display: "Ganapati Homam", value: "Ganapati Homam" },
+                {display: "Mrutyunjaya Homam", value: "Mrutyunjaya Homam" },
+                {display: "Sudarshana Homam", value: "Sudarshana Homam" },
+                {display: "Navagraha homam", value: "Navagraha homam" },
+                {display: "Lakshmi Homam", value: "Lakshmi Homam" },
+                {display: "Ayushya Homam", value: "Ayushya Homam" },
+                {display: "Chandi Homam", value: "Chandi Homam" },
+                {display: "Vastu Puja", value: "Vastu Puja" },
+                {display: "Vastu Homam", value: "Vastu Homam" },
+                {display: "Dhanvantri Homam", value: "Dhanvantri Homam" },
+                {display: "Ashtalakshmi Homam", value: "Ashtalakshmi Homam" },
+                {display: "Durga Homam", value: "Durga Homam" }
+            ]
+
+            var type5 = [
+                {display: "Parvana Vidhana Sirartha", value: "Parvana Vidhana Sirartha" },
+                {display: "Hiranya Sirartham", value: "Hiranya Sirartham" },
+                {display: "No Moon Day", value: "No Moon Day" }
+            ];
+
+            var type6 = [
+                {display: "Tatnam (Sirartham)", value: "Tatnam (Sirartham)" },
+                {display: "Bindapradhanam Darpanam", value: "Bindapradhanam Darpanam" }
+            ];
+            
+            //If parent option is changed
+            $("#id_requirement").change(function() {
+                var parent = $(this).val();
+                switch(parent){
+                    case 'type1':
+                        $('#id_services').attr('disabled', false);
+                        list(type1);
+                        break;
+                    case 'type2':
+                        $('#id_services').attr('disabled', false);
+                        list(type2);
+                        break;
+                    case 'type3':
+                        $('#id_services').attr('disabled', false);
+                        list(type3);
+                        break;
+                    case 'type4':
+                        $('#id_services').attr('disabled', false);
+                        list(type4);
+                        break;
+                    case 'type5':
+                        $('#id_services').attr('disabled', false);
+                        list(type5);
+                        break;
+                    case 'type6':
+                        $('#id_services').attr('disabled', false);
+                        list(type6);
+                        break;
+                    default: //default child option is blank
+                        $("#id_services").html('');
+                        $('#id_services').attr("disabled", true);
+                        break;
+                }
+            });
+    
+            function list(array_list) {
+                $("#id_services").html("");
+                $(array_list).each(function (i) {
+                    $("#id_services").append("<option value='" + array_list[i].value + "'>" + array_list[i].display + "</option>");
+                });
+            }
+        });
+        </script>
+    {% endblock %}
+{% endblock %}

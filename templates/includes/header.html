@@ -1,13 +1,18 @@
+{% url 'home' as home_url %}
+{% url 'register' as register_url %}
+{% url 'contact' as contact_url %}
+{% load static %}
 <header class="bg-light">
+  {% for details in orgdetails %}
     <div class="container-fluid bordered top-navbar">
       <div class="row">
         <div class="col-md-6">
           <div class="ml-3">
             <a href="" class="me-4 link-secondary">
-              <h8 class="box-title"><i class="fa fa-location-dot cl-orange" aria-hidden="true"></i><span class="ml-5">London, United Kingdom</span></h8>
+              <h8 class="box-title"><i class="fa fa-location-dot cl-orange" aria-hidden="true"></i><span class="ml-5">{{ details.location }}</span></h8>
             </a>
             <a href="" class="me-4 link-secondary">
-              <h8 class="box-title"><i class="fa fa-envelope cl-orange" aria-hidden="true"></i><span class="ml-5">abc@gmail.com</span></h8>
+              <h8 class="box-title"><i class="fa fa-envelope cl-orange" aria-hidden="true"></i><span class="ml-5">{{ details.email }}</span></h8>
             </a>
           </div>
         </div>
@@ -43,20 +48,32 @@
           </div>
           <div class="col-md-8 mt_16">
             <!-- Collapsible wrapper -->
-            <div class="collapse navbar-collapse ml-80" id="navbarCentered"> 
+            <div class="collapse navbar-collapse" id="navbarCentered"> 
               <!-- Left links -->
               <ul class="navbar-nav mb-2 mb-lg-0">
                 <li class="nav-item ml-mr">
-                  <a class="nav-link active" aria-current="page" href="#">HOME</a>
+                  <a class="nav-link {% if request.path == home_url %} active {% endif %}" href="{% url 'home' %}">HOME</a>
                 </li>
                 <li class="nav-item ml-mr">
-                  <a class="nav-link">ABOUT US</a>
+                  <a class="nav-link" href="{% url 'home' %}#about">ABOUT</a>
                 </li>
                 <li class="nav-item ml-mr">
-                  <a class="nav-link" href="#">GALLERY</a>
+                  <a class="nav-link {% if request.path == contact_url %} active {% endif %}" href="{% url 'contact' %}">CONTACT</a>
                 </li>
                 <li class="nav-item ml-mr">
-                  <a class="nav-link">REGISTER</a>
+                  <a class="nav-link {% if request.path == register_url%} active {% endif %}" href="{% url 'register' %}">REGISTER</a>
+                </li>
+                <li class="nav-item ml-mr dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-mdb-toggle="dropdown" aria-expanded="false">PANCHANGAM</a>
+                  <!-- Dropdown menu -->
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li>
+                      <a class="dropdown-item" target=”_blank” href="{% static 'doc/UK 2023 Panchangam.pdf' %}">UK 2023 PANCHANGAM</a>
+                    </li> 
+                    <li>
+                      <a class="dropdown-item"  target=”_blank” href="{% static 'doc/U.K. Cover 2023.pdf' %}">UK COVER 2023</a>
+                    </li>
+                  </ul>
                 </li>
               </ul>
               <!-- Left links -->
@@ -64,9 +81,10 @@
             <!-- Collapsible wrapper -->
           </div>
           <div class="col-md-2 mt_20">
-            <i class="fa fa-phone cl-black" aria-hidden="true"></i><span class="ml-5"><span class="cl-black">+44 7858480777</span></span>
+            <i class="fa fa-phone cl-black" aria-hidden="true"></i><span class="ml-5"><span class="cl-black">{{ details.phone }}</span></span>
           </div>
         </div>
       </div>
     </nav>
+  {% endfor %}
   </header>

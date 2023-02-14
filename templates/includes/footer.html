@@ -9,7 +9,15 @@
           <!-- Grid column -->
           <div class="col-md-2">
             <h6 class="text-uppercase font-weight-bold">
-              <a href="#!" class="text-white">HOME</a>
+              <a href="{% url 'home' %}" class="text-white">HOME</a>
+            </h6>
+          </div>
+          <!-- Grid column -->
+          
+          <!-- Grid column -->
+          <div class="col-md-2">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="{% url 'home' %}#about" class="text-white">ABOUT US</a>
             </h6>
           </div>
           <!-- Grid column -->
@@ -17,7 +25,7 @@
           <!-- Grid column -->
           <div class="col-md-2">
             <h6 class="text-uppercase font-weight-bold">
-              <a href="#!" class="text-white">ABOUT US</a>
+              <a href="{% url 'contact' %}" class="text-white">CONTACT</a>
             </h6>
           </div>
           <!-- Grid column -->
@@ -25,15 +33,7 @@
           <!-- Grid column -->
           <div class="col-md-2">
             <h6 class="text-uppercase font-weight-bold">
-              <a href="#!" class="text-white">GALLERY</a>
-            </h6>
-          </div>
-          <!-- Grid column -->
-
-          <!-- Grid column -->
-          <div class="col-md-2">
-            <h6 class="text-uppercase font-weight-bold">
-              <a href="#!" class="text-white">REGISTER</a>
+              <a href="{% url 'register' %}" class="text-white">REGISTER</a>
             </h6>
           </div>
           <!-- Grid column -->
@@ -49,10 +49,10 @@
         <div class="row d-flex justify-content-center">
           <div class="col-lg-8">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-              distinctio earum repellat quaerat voluptatibus placeat nam,
-              commodi optio pariatur est quia magnam eum harum corrupti
-              dicta, aliquam sequi voluptate quas.
+              SRI ANUGRAHA SEVA is a new Hindu portal for 
+              Vaideega Seva. It provides all help to perform Vaideega
+              Karyas (Vedic Rituals) starting from Jatha Karma to 
+              Anthima Kriya. We are based in London.
             </p>
           </div>
         </div>
@@ -68,16 +68,10 @@
           <i class="fab fa-twitter"></i>
         </a>
         <a href="" class="text-white me-4">
-          <i class="fab fa-google"></i>
-        </a>
-        <a href="" class="text-white me-4">
           <i class="fab fa-instagram"></i>
         </a>
         <a href="" class="text-white me-4">
-          <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="" class="text-white me-4">
-          <i class="fab fa-github"></i>
+          <i class="fab fa-youtube"></i>
         </a>
       </section>
       <!-- Section: Social -->
@@ -87,11 +81,20 @@
     <!-- Copyright -->
     <div
          class="text-center p-3"
-         style="background-color: rgba(0, 0, 0, 0.2)"
+         style="background-color: rgba(0, 0, 0, 0.2); padding-bottom: 3px !important;"
          >
-      © 2020 Copyright:
-      <a class="text-white" href="https://mdbootstrap.com/"
-         >MDBootstrap.com</a
+      © 2023 Copyright:
+      <a class="text-white" href="{% url 'home' %}"
+         >Sri Anugraha Seva</a
+        >
+    </div>
+    <div
+         class="text-center"
+         style="background-color: rgba(0, 0, 0, 0.2);padding-bottom: 5px !important;"
+         >
+      Powered by
+      <a class="text-white" target="_blank" href="https://teccrownsoftware.com/" style="text-decoration: underline;"
+         >Teccrown Software LLP</a
         >
     </div>
     <!-- Copyright -->

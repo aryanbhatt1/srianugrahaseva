@@ -1,5 +1,26 @@
 {% extends 'base.html' %}
 {% block title %} Sri Anugraha Seva {% endblock %}
+{% block extrastyle %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/slogan.css' %}" >
+<style>
+  .vanbanon {
+    font-family: Arial;color: yellow;font-size:30px;background-color:transparent;text-align: center;text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+  opacity: 1;
+    font-weight: bold;
+  }
+  .vanban
+  {
+    font-family: Arial;color: white;font-size:30px;background-color:transparent;text-align: center;text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+  opacity: 1;
+    font-weight: bold;
+  }
+  .card-title {
+    color:#000;
+    text-transform: uppercase;
+  }
+  </style>
+{% endblock %}
 {% block content %}
   {% include 'includes/header.html' %}
   
@@ -16,17 +37,168 @@
                   Karyas (Vedic Rituals) starting from Jatha Karma to 
                   Anthima Kriya
                 </h1>
-                <a href="#" class="btn btn-book" ><h6  style="margin-top: 4px;">Book Now</h6></a>
+                <a href="{% url 'register' %}" class="btn btn-book" ><h6  style="margin-top: 4px;">Register Now</h6></a>
               </div>
-            
             </div>
-           
           </div>
         </div>
-       
       </div>
     </div>
-   
+  </div>
+    <section style="background-color: #f6f6f1;" id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6" style="margin-top: 30px;">
+            <img src="{% static 'img/bell.png' %}"/>
+          </div>
+          <div class="col-md-6">
+            <div class="card" style="margin-top: 80px;">
+              <div class="card-body">
+                <h5 class="card-title">About Us</h5>
+                <p class="card-text justify-content-center" style="text-align: justify; text-justify: inter-word;">
+                  SRI ANUGRAHA SEVA is a new Hindu portal for 
+                  Vaideega Seva. It provides all help to perform Vaideega
+                  Karyas (Vedic Rituals) starting from Jatha Karma to 
+                  Anthima Kriya. We are based in London.
+                  We provide you the service in person with a priest or 
+                  on line via Zoom or skype. We would cater to the 
+                  needs of Hindus living in Western countries. Their 
+                  needs are different from Hindus elsewhere. So we 
+                  thought it is good to provide you all the basic Mantras, 
+                  Pujas and other rituals in this website. 
+                  Please note that we help you to perform Subham and 
+                  Apara karyas as well.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="container" id="services" style="margin-top: 30px; text-align: center; padding-left: 160px; padding-right:160px;">
+      <h2>Services We Provide</h2>
+      <div class="row" style="margin-top: 40px;">
+        <div class="col-md-4">
+          <div class="card">
+            <img src="{% static 'img/s1.png' %}" height="300" class="card-img-top" style="padding: 40px; width: 300px;"/>
+            <div class="card-body">
+              <h5 class="card-title">Planetary transit</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img src="{% static 'img/s2.png' %}" height="300" class="card-img-top" style="padding: 40px; width: 300px;"/>
+            <div class="card-body">
+              <h5 class="card-title">House warming</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img src="{% static 'img/s3.png' %}" height="300" class="card-img-top" style="padding: 40px; width: 300px;"/>
+            <div class="card-body">
+              <h5 class="card-title">Telugu Sampradaya</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-top: 50px;">
+        <div class="col-md-4">
+          <div class="card">
+            <img src="{% static 'img/s4.png' %}" height="300" class="card-img-top" style="padding: 40px; width: 300px;"/>
+            <div class="card-body">
+              <h5 class="card-title">Homam</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img src="{% static 'img/s5.png' %}" height="300" class="card-img-top" style="padding: 40px; width: 300px;"/>
+            <div class="card-body">
+              <h5 class="card-title">Sirartha</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img src="{% static 'img/s6.png' %}" height="300" class="card-img-top" style="padding: 40px; width: 300px;"/>
+            <div class="card-body">
+              <h5 class="card-title">As per Telugu tradition</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
   {% include 'includes/footer.html' %}
+  {% block js %}
+  {% load static %}
+<script>
+  const audioControButton = document.querySelectorAll(".play__pause");
+
+function playPauseAudio(btn, track) {
+  if (track.paused) {
+    track.play();
+    btn.classList.add("pause");
+    btn.classList.remove("play");
+  } else {
+    track.pause();
+    btn.classList.add("play");
+    btn.classList.remove("pause");
+  }
+}
+
+// Loop all instance of play buttons
+if (audioControButton.length > 0) {
+  audioControButton.forEach((playButton) => {
+    playButton.addEventListener("click", (e) => {
+      e.preventDefault;
+      let elemContainer = playButton.parentElement;
+      let track = elemContainer.querySelector("audio");
+      stopAllAudio(track);
+      playPauseAudio(playButton, track);
+    });
+  });
+}
+
+function stopAllAudio(elem) {
+  const audios = document.getElementsByTagName("audio");
+  for (var i = 0, len = audios.length; i < len; i++) {
+    if (audios[i] != elem) {
+      audios[i].pause();
+      console.log(audios[i].nextElementSibling);
+      audios[i].nextElementSibling.classList.remove("pause");
+      audios[i].nextElementSibling.classList.add("play");
+    }
+  }
+}
+
+</script>
+ <script>
+  var audio = document.querySelector('audio');
+  var span1 = document.querySelector('div#vanban1');
+  var span2 = document.querySelector('div#vanban2');
+  var track = audio.textTracks[0];
+  track.mode = 'hidden';
+  var idx = 0;
+  track.oncuechange = function(e) {
+    var cue = this.activeCues[0];
+    if (cue) {
+        if (idx == 0) {
+      span2.className = 'vanban';
+            span1.innerHTML = '';
+            span1.className = 'vanbanon';
+            span1.appendChild(cue.getCueAsHTML());
+        } else {
+            span1.className = 'vanban';
+            span2.innerHTML = '';
+            span2.className = 'vanbanon';
+           span2.appendChild(cue.getCueAsHTML());
+        }
+        }
+        idx = ++idx % 2;
+  };
+  </script>
+  {% endblock %}
 {% endblock %}
