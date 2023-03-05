@@ -29,7 +29,11 @@ SECRET_KEY = 'django-insecure-bz83o=*y9k+ts@j80hsoc550a2%u(r3%1emfknqjt%&)-a%lr1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = [
+    "srianugrahaseva.co.uk",
+    "www.srianugrahaseva.co.uk",
+    "127.0.0.1"
+]
 
 EMAIL_USE_TLS = True
 EMAIL_HOST = "smtp.gmail.com"
@@ -43,6 +47,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # Application definition
 
 INSTALLED_APPS = [
+    'whitenoise.runserver_nostatic',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -131,12 +136,15 @@ TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
+USE_L10N = True
+
 USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 STATIC_URL = '/static/'
 if DEBUG:
     STATICFILES_DIRS = [
@@ -150,7 +158,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
-'''
+
 SECURE_HSTS_SECONDS = 12121212
 SECURE_SSL_REDIRECT = True
 SESSION_COOKIE_SECURE = True
@@ -158,4 +166,12 @@ CSRF_COOKIE_SECURE = True
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_HSTS_PRELOAD = True
 '''
+'''
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://www.srianugrahaseva.co.uk',
+    'https://srianugrahaseva.co.uk',
+    'http://127.0.0.1'
+] 
