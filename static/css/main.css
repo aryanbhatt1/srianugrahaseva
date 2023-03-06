@@ -91,9 +91,7 @@
     float: left !important;
 }
 
-.ml-mr{
-    margin: 0px 40px 0px 40px;
-}
+
 
 .container-custom {
     flex-wrap: inherit;
@@ -139,4 +137,95 @@ h1{
 .btn-book:hover{  
     background-color:#f7b135 ;
 }
+@media (min-width:1025px) {
+    .servicescontainer{
+        margin-top: 30px;
+        text-align: center;
+        padding-left: 160px;
+        padding-right:160px;
+    }
+    .mainsliderimage{
+        height: 650px;
+    }
+    .row-services {
+        margin-top: 40px;
+    }
+    .card_img{
+        padding: 40px; 
+        width: 300px;
+        height: 300px;
+    }
+    .aboutustext {
+        margin-top: 80px;
+    }
+    .aboutusimg{
+        margin-top: 30px;
+    }
+    .margin-left-3{
+        margin-left: 30px;
+    }
+    .mobile{
+        display: none;
+    }
+    .text_book {
+        margin-top: 120px;
+        margin-left: 120px;
+    }
+    .h6_book{
+        display: none;
+    }
+    .ml-mr{
+        margin: 0px 30px 0px 30px;
+    }
+    #navbarCentered{
+        margin-left: 35px;
+    }
+}
 
+
+
+@media (max-width:450px) {
+    .card-margin{
+        margin-bottom: 20px;
+    }
+    .card_img{
+        padding: 50px;
+    }
+    .card-title{
+        text-align: center;
+    }
+    .card-section-title{
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .servicescontainer{
+        margin-top: 60px;
+
+    }
+    #about {
+        padding-bottom: 50px;
+    }
+    .bell_image{
+        width: 370px;
+    }
+    .pc_phone{
+        display: none;
+    }
+    .navbar-toggler{
+        width: 55px;
+        margin-top: 10px;
+    }
+    .social_mobile{
+        display: none;
+    }
+    .h1_book{
+        display: none;
+    }
+    .h6_book_text {
+        width: 200px;
+        margin-top: 30px;
+    }
+    #navbarCentered{
+        margin-left: 20px;
+    }
+}
