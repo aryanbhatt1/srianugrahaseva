@@ -5,13 +5,20 @@
 {% block extrastyle %}
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        @media (max-width:450px) {
+            .margin_bottom {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
 {% endblock %}
 {% block content %}
     {% include 'includes/header.html' %}
     <div class="container">
         <div class="row" style="margin-top: 40px;">
             <h3>Contact Us</h3>
-            <div class="col-md-6">
+            <div class="col-md-6 margin_bottom">
                 <form method="POST">
                     {% csrf_token %}
                     <div class="row">
