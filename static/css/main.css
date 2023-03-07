@@ -23,9 +23,7 @@
     padding-bottom: 10px;
 }
 
-.float-right {
-    float: right !important;
-}
+
 
 .mr-3 {
     margin-right: 30px;
@@ -137,6 +135,35 @@ h1{
 .btn-book:hover{  
     background-color:#f7b135 ;
 }
+
+.goog-te-gadget-icon {
+    display:none;
+}
+
+.goog-te-gadget{
+    border:1px solid #e8e4e4 !important;
+}
+.goog-te-gadget-simple .VIpgJd-ZVi9od-xl07Ob-lTBxed span {
+    font-family: "Source Sans Pro", Sans-Serif;
+}
+
+.goog-te-gadget-simple {
+    
+    background-color: #fbfbfb !important;
+    border: 1px #E4E4E4 !important;
+    font-size: 10pt;
+    font-weight:550;
+    display: inline-block;
+    padding:10px 10px !important;
+    cursor: pointer;
+    zoom: 1;
+}
+  
+.goog-te-gadget-simple  span {
+    font-family: "Source Sans Pro", Sans-Serif;
+    color:#000000 !important;
+}
+
 @media (min-width:1025px) {
     .servicescontainer{
         margin-top: 30px;
@@ -180,6 +207,9 @@ h1{
     #navbarCentered{
         margin-left: 35px;
     }
+    .float-right {
+        float: right !important;
+    }
 }
 
 
@@ -215,8 +245,9 @@ h1{
         width: 55px;
         margin-top: 10px;
     }
-    .social_mobile{
-        display: none;
+    #google_translate_element{
+        margin-top: 10px;
+        width: 160px;
     }
     .h1_book{
         display: none;
